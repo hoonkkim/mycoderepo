@@ -1,0 +1,3 @@
+Menus.Menu Name,Menus.Menu Type,Cost,Frequency,Recency,DeliveryServiceName,Food Cost,Delivery Cost,Cooking Difficulty,Cooking Time
+Chow Mein,Ordered,16.99,4,3,Uber Eats,14.99,2.00,,
+Eggplant Casserole,Cooked,3.44,0,0,,,,4,60
