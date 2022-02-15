@@ -5,12 +5,19 @@ import Menus.Menu;
 import java.util.ArrayList;
 
 public class menuRecommendationSorter {
-    // this method prints any array of Menus in order.
 
-    // this method sorts an array of Menus in frequency descending order then prints it.
+    // this method sorts an arraylist of Menus in score descending order.
     public ArrayList<Menu> sortMenus(ArrayList<Menu> menuArrayList) {
         // need to implement tiebreakers in the future
         ArrayList<Menu> sortedMenuArrayList = new ArrayList<Menu>();
+
+        // Score all menus.
+        menuScorer mS = new menuScorer();
+        for (int arraysize = 0; arraysize < menuArrayList.size(); arraysize++)
+        {
+            mS.menuScorer(menuArrayList.get(arraysize));
+        }
+
         for (int arraysize = 0; arraysize < menuArrayList.size(); arraysize++)
         {
             sortedMenuArrayList.add(arraysize, null);
@@ -30,6 +37,14 @@ public class menuRecommendationSorter {
                     switch (compareResult) {
                         case 1:
                             break;
+                        case 0:
+                            if(menuArrayList.get(j).getName().compareToIgnoreCase(compTarget.getName()) <= 0) {
+                                orderRank += 1;
+                                break;
+                            }
+                            else {
+                                break;
+                            }
                         case -1:
                             orderRank += 1;
                             break;

@@ -1,6 +1,8 @@
 package Menus;
 
-public class OrderedMenu extends Menu{
+import java.io.Serializable;
+
+public class OrderedMenu extends Menu implements Serializable{
         // Defaults for attribute values are -1 for debugging.
         // Menus.OrderedMenu Specific Attributes
         private double deliveryCost = -1;
@@ -8,6 +10,15 @@ public class OrderedMenu extends Menu{
         private double foodCost = -1;
         // Constructors: 1 empty, 1 full
         public OrderedMenu() {}
+
+        public OrderedMenu(String nameInput, double costInput, int frequencyInput
+            , int recencyInput) {
+        super.setName(nameInput);
+        super.setCost(costInput);
+        super.setFrequency(frequencyInput);
+        super.setRecency(recencyInput);
+        }
+
         public OrderedMenu(String nameInput, double costInput, int frequencyInput
                 , int recencyInput, String deliveryServiceInput) {
             super.setName(nameInput);
@@ -39,6 +50,8 @@ public class OrderedMenu extends Menu{
             super.setCost(foodcost+deliverycost);
         }
 
+        public String getType() {return "Ordered";}
+
         // OrderedSpecific Methods
         // Getters and setters for delivery service, delivery cost, & food cost
         public String getDeliveryServiceName() {
@@ -54,5 +67,4 @@ public class OrderedMenu extends Menu{
         }
         public void setDeliveryCost(double deliveryCostInput) {deliveryCost = deliveryCostInput;}
         public void setFoodCost(double foodCostInput) {foodCost = foodCostInput;}
-
 }

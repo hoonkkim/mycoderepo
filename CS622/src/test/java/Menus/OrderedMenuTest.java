@@ -1,3 +1,5 @@
+package Menus;
+
 import Menus.CookedMenu;
 import Menus.OrderedMenu;
 import org.junit.jupiter.api.Assertions;

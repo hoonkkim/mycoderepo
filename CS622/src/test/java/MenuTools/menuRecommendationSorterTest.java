@@ -1,3 +1,5 @@
+package MenuTools;
+
 import MenuTools.menuRecommendationSorter;
 import Menus.CookedMenu;
 import Menus.Menu;

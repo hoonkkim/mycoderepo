@@ -2,6 +2,7 @@ package MenuTools;
 
 import Menus.CookedMenu;
 import Menus.Menu;
+import Menus.MenuAttributeContainer;
 import Menus.OrderedMenu;
 
 import java.io.*;
@@ -36,59 +37,66 @@ public class menuFileImporter  {
         ArrayList<Menu> inputMenuList = new ArrayList<>();
         for(int i = 0; i < inputStringList.size(); i++)
         {
+            MenuAttributeContainer<String> NameContainer = new MenuAttributeContainer<String>(inputStringList.get(i).get(0).trim());
+            MenuAttributeContainer<String> MenuTypeContainer = new MenuAttributeContainer<String>(inputStringList.get(i).get(1).trim());
+            MenuAttributeContainer<Double> MenuCostContainer = new MenuAttributeContainer<Double>(Double.parseDouble(inputStringList.get(i).get(2).trim()));
+            MenuAttributeContainer<Integer> MenuFrequencyContainer = new MenuAttributeContainer<Integer>(Integer.parseInt(inputStringList.get(i).get(3).trim()));
+            MenuAttributeContainer<Integer> MenuRecencyContainer = new MenuAttributeContainer<Integer>(Integer.parseInt(inputStringList.get(i).get(4).trim()));
             // Throw exceptions for key attributes required for the program to run.
-            if(inputStringList.get(i).get(0).trim().isBlank()) {
+            if(NameContainer.getAttribute().isBlank()) {
                 throw new IncompleteMenuException("Menus.Menu Attribute MenuName is Missing in File row "+i);
             }
-            if(inputStringList.get(i).get(1).trim().isBlank()) {
+            if(MenuTypeContainer.getAttribute().isBlank()) {
                 throw new IncompleteMenuException("Menus.Menu Attribute MenuType is Missing in File row "+i);
             }
-            if(inputStringList.get(i).get(2).trim().isBlank()) {
+            if(MenuCostContainer.getAttribute()==null) {
                 throw new IncompleteMenuException("Menus.Menu Attribute Cost is Missing in File row "+i);
             }
-            if(inputStringList.get(i).get(3).trim().isBlank()) {
+            if(MenuFrequencyContainer.getAttribute()==null) {
                 throw new IncompleteMenuException("Menus.Menu Attribute Frequency is Missing in File row "+i);
             }
-            if(inputStringList.get(i).get(4).trim().isBlank()) {
+            if(MenuRecencyContainer.getAttribute()==null) {
                 throw new IncompleteMenuException("Menus.Menu Attribute Recency is Missing in File row "+i);
             }
-            else {
+
 //            System.out.println(inputStringList.get(i).get(1));
-                if (inputStringList.get(i).get(1).equals("Ordered")) {
+                if (MenuTypeContainer.getAttribute().equals("Ordered")) {
 
                     OrderedMenu OM = new OrderedMenu();
 //                Chow Mein, Ordered, 16.99, 3, 3, Uber Eats, 14.99, 2.00, ,
-                    OM.setName(inputStringList.get(i).get(0));
+                    OM.setName(NameContainer.getAttribute());
                     // Add Try/Catch blocks for cost/freq/recency
                     // is not a double/numeric condition here. + these 4 cannot be null
-                    OM.setCost(Double.parseDouble(inputStringList.get(i).get(2)));
-                    OM.setFrequency(Integer.parseInt(inputStringList.get(i).get(3)));
-                    OM.setRecency(Integer.parseInt(inputStringList.get(i).get(4)));
+                    OM.setCost(MenuCostContainer.getAttribute());
+                    OM.setFrequency(MenuFrequencyContainer.getAttribute());
+                    OM.setRecency(MenuRecencyContainer.getAttribute());
+
                     OM.setDeliveryService(inputStringList.get(i).get(5));
                     OM.setFoodCost(Double.parseDouble(inputStringList.get(i).get(6)));
                     OM.setDeliveryCost(Double.parseDouble(inputStringList.get(i).get(7)));
                     inputMenuList.add(OM);
-                    System.out.println("Ordered Menus.Menu " + OM.getName() + " was entered into BLT"
+                    System.out.println("Ordered Menu " + OM.getName() + " was entered into BLT"
                             + " from File " + menuFile);
                 }
 
-                if (inputStringList.get(i).get(1).equals("Cooked")) {
+                if (MenuTypeContainer.getAttribute().equals("Cooked")) {
                     CookedMenu CM = new CookedMenu();
 //                Eggplant Casserole, Cooked, 3.44, 0, 0, , , , 4, 60
-                    CM.setName(inputStringList.get(i).get(0));
+                    CM.setName(NameContainer.getAttribute());
                     // Add Try/Catch blocks for cost/freq/recency
                     // is not a double/numeric condition here. + these 4 cannot be null
-                    CM.setCost(Double.parseDouble(inputStringList.get(i).get(2)));
-                    CM.setFrequency(Integer.parseInt(inputStringList.get(i).get(3)));
-                    CM.setRecency(Integer.parseInt(inputStringList.get(i).get(4)));
+                    CM.setCost(MenuCostContainer.getAttribute());
+                    CM.setFrequency(MenuFrequencyContainer.getAttribute());
+                    CM.setRecency(MenuRecencyContainer.getAttribute());
+
                     CM.setCookingDifficulty(Double.parseDouble(inputStringList.get(i).get(8)));
                     CM.setCookingDifficulty(Double.parseDouble(inputStringList.get(i).get(9)));
 
                     inputMenuList.add(CM);
-                    System.out.println("Cooked Menus.Menu " + CM.getName() + " was entered into BLT"
+                    System.out.println("Cooked Menu " + CM.getName() + " was entered into BLT"
                             + " from File " + menuFile);
                 }
-            }
+
         }
 
     return inputMenuList;

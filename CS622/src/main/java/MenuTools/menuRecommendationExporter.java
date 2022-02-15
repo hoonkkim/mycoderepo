@@ -17,7 +17,7 @@ public class menuRecommendationExporter {
     // Takes the array of strings and File I/O's the strings into a text file.
     public String[] menuToString(ArrayList<Menu> menuArrayList) {
         String[] exportStringArray = new String[menuArrayList.size()+1];
-        exportStringArray[0] = "Recommendation #, Menus.Menu Name, Cost, Frequency, Recency";
+        exportStringArray[0] = "Recommendation #, Menus.Menu Name, Cost, Frequency, Recency, Score";
         for (int i = 0; i < menuArrayList.size(); i++) {
 
             exportStringArray[i+1] =
@@ -25,13 +25,14 @@ public class menuRecommendationExporter {
                     +menuArrayList.get(i).getName()+", "
                     +menuArrayList.get(i).getCost()+", "
                     +menuArrayList.get(i).getFrequency()+", "
-                    +menuArrayList.get(i).getRecency();
+                    +menuArrayList.get(i).getRecency()+", "
+                    +menuArrayList.get(i).getScore();
         }
 
-        for (int j =0 ; j < exportStringArray.length; j++ )
-        {
-            System.out.println(exportStringArray[j]);
-        }
+//        for (int j =0 ; j < exportStringArray.length; j++ )
+//        {
+//            System.out.println(exportStringArray[j]);
+//        }
 
         return exportStringArray;
     }
@@ -44,6 +45,7 @@ public class menuRecommendationExporter {
                 if(k>0) {br.newLine();}
                 br.write(menuStringArray[k]);
             }
+            System.out.println("Recommendations Exported to MenuRecommendationExport.txt");
             br.close();
         } catch (IOException e) {
             e.printStackTrace();
