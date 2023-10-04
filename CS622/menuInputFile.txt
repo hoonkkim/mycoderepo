@@ -1,5 +1,8 @@
 Menu Name,Menus.Menu Type,Cost,Frequency,Recency,DeliveryServiceName,Food Cost,Delivery Cost,Cooking Difficulty,Cooking Time
 Chow Mein,Ordered,16.99,4,3,Uber Eats,14.99,2.00,,
-Eggplant Casserole,Cooked,3.44,0,0,,,,4,60
+Eggplant Casserole,Cooked,3.44,1,0,,,,4,60
 Braised Beef Ribs,Cooked,11.18,5,0,,,,8,280
-Chicken Casserole,Cooked,3.44,0,0,,,,4,60
+Chicken Casserole,Cooked,3.44,7,3,,,,4,60
+Lo Mein,Ordered,21.33,2,13,Grubhub,17.33,4.00,,
+Chicken Tikka Masala,Cooked,6.61,2,2,,,,5,71
+Lamb Shawarma,Ordered,13.13,3,4,Doordash,13.13,0,,

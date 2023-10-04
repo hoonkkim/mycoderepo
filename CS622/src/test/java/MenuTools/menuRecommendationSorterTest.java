@@ -27,7 +27,7 @@ class menuRecommendationSorterTest {
         menuArrayList.add(menuFour);
 
         menuRecommendationSorter sorter = new menuRecommendationSorter();
-        ArrayList<Menu> sortedArrayList = sorter.sortMenus(menuArrayList);
+        ArrayList<Menu> sortedArrayList = sorter.sortMenusByScore(menuArrayList);
 
         Assertions.assertEquals(sortedArrayList.get(0).getName(), menuTwo.getName());
         Assertions.assertEquals(sortedArrayList.get(1).getName(), menuFour.getName());

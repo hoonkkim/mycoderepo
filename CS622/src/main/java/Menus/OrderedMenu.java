@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class OrderedMenu extends Menu implements Serializable{
         // Defaults for attribute values are -1 for debugging.
         // Menus.OrderedMenu Specific Attributes
-        private double deliveryCost = -1;
+        private double deliveryCost = 0;
         private String deliveryServiceName = "DefaultServiceName";
-        private double foodCost = -1;
+        private double foodCost = 0;
         // Constructors: 1 empty, 1 full
         public OrderedMenu() {}
 

@@ -89,7 +89,7 @@ public class menuFileImporter  {
                     CM.setFrequency(MenuFrequencyContainer.getAttribute());
                     CM.setRecency(MenuRecencyContainer.getAttribute());
 
-                    CM.setCookingDifficulty(Double.parseDouble(inputStringList.get(i).get(8)));
+                    CM.setCookingTime(Double.parseDouble(inputStringList.get(i).get(8)));
                     CM.setCookingDifficulty(Double.parseDouble(inputStringList.get(i).get(9)));
 
                     inputMenuList.add(CM);

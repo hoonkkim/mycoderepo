@@ -35,7 +35,8 @@ public class inputOutputMenuObjects {
             boolean x = true;
             while (x) {
                 Object obj = input.readObject();
-                m.add((Menu) obj);
+                if(obj != null) {m.add((Menu) obj);}
+                else {x=false;}
 //                System.out.println((Menu) obj);
             }
         }

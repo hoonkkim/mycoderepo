@@ -7,9 +7,9 @@ import java.io.Serializable;
 public class CookedMenu extends Menu implements Serializable{
     // Menus.CookedMenu Specific Attributes
     // cookingDifficulty is on a scale of 1-10
-    private double cookingDifficulty = -1;
+    private double cookingDifficulty = 0;
     // cookingTime is minutes
-    private double cookingTime = -1;
+    private double cookingTime = 0;
 
     // Constructors: 1 empty, 1 full
     public CookedMenu() {}

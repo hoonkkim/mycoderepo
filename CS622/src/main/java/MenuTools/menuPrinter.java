@@ -18,12 +18,14 @@ public class menuPrinter {
                 // Iterates through the sorted array of Menus.Menu Objects to print recommendations
                 // We downcast from Menus.Menu to Menus.OrderedMenu in this case to get the delivery service name.
                 System.out.println("Recommendation #"+(1+i)+". "+MenuName+", Frequency: "+menuArrayList.get(i).getFrequency()+
+                        ", Recency: "+menuArrayList.get(i).getRecency()+
                         ", Delivered by: "+((OrderedMenu) menuArrayList.get(i)).getDeliveryServiceName()
                         +", Cost: $"+menuArrayList.get(i).getCost()
                         +", Score: "+menuArrayList.get(i).getScore());
             }
             else {
                 System.out.println("Recommendation #"+(1+i)+". "+MenuName+", Frequency: "+menuArrayList.get(i).getFrequency()
+                        +", Recency: "+menuArrayList.get(i).getRecency()
                         +", Cooked by: Me"+", Cost: $"+menuArrayList.get(i).getCost()+", Score: "+menuArrayList.get(i).getScore());
             }
         }

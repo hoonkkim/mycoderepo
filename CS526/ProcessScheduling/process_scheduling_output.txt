@@ -1,0 +1,127 @@
+ID = 1 Priority = 4 Duration = 25 ArrivalTime = 10
+ID = 2 Priority = 3 Duration = 15 ArrivalTime = 17
+ID = 3 Priority = 1 Duration = 17 ArrivalTime = 26
+ID = 4 Priority = 9 Duration = 17 ArrivalTime = 30
+ID = 5 Priority = 10 Duration = 9 ArrivalTime = 40
+ID = 6 Priority = 6 Duration = 14 ArrivalTime = 47
+ID = 7 Priority = 7 Duration = 18 ArrivalTime = 52
+ID = 8 Priority = 5 Duration = 18 ArrivalTime = 70
+ID = 9 Priority = 2 Duration = 16 ArrivalTime = 93
+ID = 10 Priority = 8 Duration = 20 ArrivalTime = 125
+
+Maximum Wait Time: 30
+
+Process 1 with priority 4 is removed from Queue and executing. Arrival: 10 Duration: 25
+Current Time is 10 and Wait Time was: 0
+Process 1 finished at time 35
+
+Process 3 with priority 1 is removed from Queue and executing. Arrival: 26 Duration: 17
+Current Time is 35 and Wait Time was: 9
+Process 3 finished at time 52
+
+Updating Priority
+Current Priority for Process ID=2 is 3
+The process arrived at 17 and waited for 35
+New Priority for Process ID=2 is 2
+
+Process 2 with priority 2 is removed from Queue and executing. Arrival: 17 Duration: 15
+Current Time is 52 and Wait Time was: 35
+Process 2 finished at time 67
+
+Updating Priority
+Current Priority for Process ID=4 is 9
+The process arrived at 30 and waited for 37
+New Priority for Process ID=4 is 8
+
+Process 6 with priority 6 is removed from Queue and executing. Arrival: 47 Duration: 14
+Current Time is 67 and Wait Time was: 20
+Process 6 finished at time 81
+
+Updating Priority
+Current Priority for Process ID=4 is 8
+The process arrived at 30 and waited for 51
+New Priority for Process ID=4 is 7
+
+Updating Priority
+Current Priority for Process ID=5 is 10
+The process arrived at 40 and waited for 41
+New Priority for Process ID=5 is 9
+
+Process 8 with priority 5 is removed from Queue and executing. Arrival: 70 Duration: 18
+Current Time is 81 and Wait Time was: 11
+Process 8 finished at time 99
+
+Updating Priority
+Current Priority for Process ID=7 is 7
+The process arrived at 52 and waited for 47
+New Priority for Process ID=7 is 6
+
+Updating Priority
+Current Priority for Process ID=4 is 7
+The process arrived at 30 and waited for 69
+New Priority for Process ID=4 is 6
+
+Updating Priority
+Current Priority for Process ID=5 is 9
+The process arrived at 40 and waited for 59
+New Priority for Process ID=5 is 8
+
+Process 9 with priority 2 is removed from Queue and executing. Arrival: 93 Duration: 16
+Current Time is 99 and Wait Time was: 6
+Process 9 finished at time 115
+
+Updating Priority
+Current Priority for Process ID=7 is 6
+The process arrived at 52 and waited for 63
+New Priority for Process ID=7 is 5
+
+Updating Priority
+Current Priority for Process ID=4 is 6
+The process arrived at 30 and waited for 85
+New Priority for Process ID=4 is 5
+
+Updating Priority
+Current Priority for Process ID=5 is 8
+The process arrived at 40 and waited for 75
+New Priority for Process ID=5 is 7
+
+Process 7 with priority 5 is removed from Queue and executing. Arrival: 52 Duration: 18
+Current Time is 115 and Wait Time was: 63
+D is now empty at 126
+Process 7 finished at time 133
+
+Updating Priority
+Current Priority for Process ID=4 is 5
+The process arrived at 30 and waited for 103
+New Priority for Process ID=4 is 4
+
+Updating Priority
+Current Priority for Process ID=5 is 7
+The process arrived at 40 and waited for 93
+New Priority for Process ID=5 is 6
+
+Process 4 with priority 4 is removed from Queue and executing. Arrival: 30 Duration: 17
+Current Time is 133 and Wait Time was: 103
+Process 4 finished at time 150
+
+Updating Priority
+Current Priority for Process ID=5 is 6
+The process arrived at 40 and waited for 110
+New Priority for Process ID=5 is 5
+
+Process 5 with priority 5 is removed from Queue and executing. Arrival: 40 Duration: 9
+Current Time is 150 and Wait Time was: 110
+Process 5 finished at time 159
+
+Updating Priority
+Current Priority for Process ID=10 is 8
+The process arrived at 125 and waited for 34
+New Priority for Process ID=10 is 7
+
+Process 10 with priority 7 is removed from Queue and executing. Arrival: 125 Duration: 20
+Current Time is 159 and Wait Time was: 34
+Process 10 finished at time 179
+
+All Processes Complete at time 179
+Total Wait Time is 391
+Avg Wait Time is 39.1
